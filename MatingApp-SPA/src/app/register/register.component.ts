@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { AuthService } from '../-services/auth.service';
 import { error } from '@angular/compiler/src/util';
+import { AlertifyService } from '../-services/alertify.service';
 
 @Component({
   selector: 'app-register',
@@ -11,7 +12,7 @@ export class RegisterComponent implements OnInit {
   @Output() cancelRegister = new EventEmitter();
   model: any = {};
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService,  private alertify: AlertifyService) { }
 
   // tslint:disable-next-line: typedef
   ngOnInit() {
@@ -20,16 +21,16 @@ export class RegisterComponent implements OnInit {
   // tslint:disable-next-line: typedef
   register(){
       this.authService.register(this.model).subscribe(() => {
-        console.log('registartion succesfull');
+        this.alertify.success('registartion succesfull');
       // tslint:disable-next-line: no-shadowed-variable
       }, error => {
-        console.log('error');
+        this.alertify.error('error');
       });
   }
   // tslint:disable-next-line: typedef
   cancel(){
     this.cancelRegister.emit(false);
-    console.log('cancelled');
+    this.alertify.warning('cancelled');
 
   }
 

@@ -6,6 +6,7 @@
 */
 {
   "files": [],
+  "compilerOptions": {},
   "references": [
     {
       "path": "./tsconfig.app.json"
@@ -16,5 +17,6 @@
     {
       "path": "./e2e/tsconfig.json"
     }
+   
 ]
 }
