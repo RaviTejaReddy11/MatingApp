@@ -2,7 +2,6 @@ using System.Linq;
 using AutoMapper;
 using MatingApp.API.Controllers.Models;
 using MatingApp.API.Dtos;
-
 namespace MatingApp.API.Helpers
 {
     public class AutoMapperProfiles : Profile
