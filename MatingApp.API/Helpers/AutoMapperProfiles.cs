@@ -21,6 +21,11 @@ namespace MatingApp.API.Helpers
                    opt.MapFrom(src=> src.DateOfBirth.CalculateAge()));
             CreateMap<Photo, PhotosForDetailedDto>();
 
+            CreateMap<UserForUpdateDto, User>();
+
+            CreateMap<Photo , PhotoFromReturnDto>();
+            CreateMap<photoForCreationDto, Photo>();
+
         }
     }
 }

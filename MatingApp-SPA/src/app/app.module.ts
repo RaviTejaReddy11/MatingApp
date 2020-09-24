@@ -23,8 +23,12 @@ import { MemberDetailComponent } from './members/member-detail/member-detail.com
 import { MemberEditComponent } from './members/member-edit/member-edit.component';
 import { JwtModule } from '@auth0/angular-jwt';
 import { MemberDetailResolver } from './-resolvers/member-detail.resolver';
+import { MemberEditResolver } from './-resolvers/member-edit.resolver';
 import { MemberListResolver } from './-resolvers/member-List.resolver';
 import { NgxGalleryModule } from 'ngx-gallery-9';
+import { AuthGuard } from './-guards/auth.guard';
+import { PreventUnsavedChanges } from './-guards/prevent-unsaved-changes.guard';
+
 
 // tslint:disable-next-line: typedef
 export function tokenGetter() {
@@ -67,7 +71,10 @@ export function tokenGetter() {
       AuthService,
       ErrorInterceptorProvider,
       MemberDetailResolver,
-      MemberListResolver
+      MemberListResolver,
+      MemberEditResolver,
+      AuthGuard,
+      PreventUnsavedChanges
    ],
 
    bootstrap: [

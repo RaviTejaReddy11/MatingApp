@@ -14,5 +14,7 @@ namespace MatingApp.API.Controllers.Data
 
          Task<User> GetUser(int id);
 
+         Task<Photo> GetPhoto(int id);
+
     }
 }

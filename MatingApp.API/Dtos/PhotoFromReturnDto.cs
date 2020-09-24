@@ -1,8 +1,8 @@
 using System;
 
-namespace MatingApp.API.Controllers.Models
+namespace MatingApp.API.Dtos
 {
-    public class Photo
+    public class PhotoFromReturnDto
     {
         public int Id { get; set; }
         public string Url { get; set; }
@@ -10,10 +10,6 @@ namespace MatingApp.API.Controllers.Models
          public string Description { get; set; }
         public DateTime DateAdded { get; set; }
          public bool IsMain { get; set; }
-//cloudinary id
          public string PublicId { get; set; }
-         public User user {get; set;}
-         public int UserId {get; set;}
-        
     }
 }
